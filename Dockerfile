@@ -21,6 +21,8 @@ RUN wunderctl version
 
 # add project artifacts to docker image
 ADD . .
+
+# generate your wundergraph application
 RUN wunderctl generate
 
 # Image layer for production
