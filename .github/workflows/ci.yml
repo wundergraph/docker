@@ -23,8 +23,12 @@ jobs:
       - name: Create WunderGraph sample app
         run: mkdir testapp && cd testapp && wunderctl init -t nextjs-starter
 
-      - name: Build container
+      - name: Copy files
         run: cp Dockerfile ./testapp && cp .dockerignore ./testapp
+
+      - name: Install dependencies
+        working-directory: testapp
+        run: npm i
 
       - name: Build container
         working-directory: testapp
