@@ -23,7 +23,7 @@ RUN wunderctl version
 ADD . .
 
 # generate your wundergraph application
-RUN wunderctl generate
+RUN cd .wundergraph && wunderctl generate
 
 # Image layer for production
 from node:lts-alpine as runner
