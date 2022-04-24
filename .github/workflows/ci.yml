@@ -1,0 +1,34 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install wunderctl
+        run: |
+          curl -s -L https://github.com/wundergraph/wunderctl/releases/download/v0.74.7/wunderctl_0.74.7_Linux_x86_64.tar.gz | tar xzvf - && \
+          chmod +x wunderctl && mv wunderctl /usr/local/bin
+
+      - name: Create WunderGraph sample app
+        run: mkdir testapp && cd testapp && wunderctl init -t nextjs-starter
+
+      - name: Build container
+        run: cp Dockerfile ./testapp && cp .dockerignore ./testapp
+
+      - name: Build container
+        working-directory: testapp
+        run: docker build -t wundergraph .
+
+      - name: Delete app
+        continue-on-error: true
+        run: rm -rf testapp || true
