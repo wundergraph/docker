@@ -38,6 +38,6 @@ COPY --from=build --chown=node:node /usr/local/bin/wunderctl /usr/local/bin/wund
 # run as non-root user
 USER node
 
-CMD wunderctl start --listen_addr 0.0.0.0:9991 --debug
+CMD wunderctl start --listen-addr 0.0.0.0:9991 --debug
 
 EXPOSE 9991
