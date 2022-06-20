@@ -15,7 +15,7 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # install wunderctl in correct version
-RUN curl -s -L https://github.com/wundergraph/wundergraph/releases/download/v0.90.17/wunderctl_0.90.17_Linux_x86_64.tar.gz | tar xzvf - && \
+RUN curl -s -L https://github.com/wundergraph/wunderctl/releases/download/v0.92.0/wunderctl_0.92.0_Linux_x86_64.tar.gz | tar xzvf - && \
     chmod +x wunderctl && mv wunderctl /usr/local/bin
 RUN wunderctl version
 
