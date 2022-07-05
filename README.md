@@ -11,6 +11,7 @@ This repository instructs you how to build a docker container for WunderGraph. I
 └── app/
     ├── .wundergraph/
     │   ├── generated/
+    │   ├── operations/
     │   ├── wundergraph.config.ts
     │   ├── wundergraph.server.ts
     │   └── wundergraph.operations.ts
