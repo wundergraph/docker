@@ -10,14 +10,20 @@ This repository instructs you how to build a docker container for WunderGraph. I
 .
 └── app/
     ├── .wundergraph/
+    │   ├── generated/
     │   ├── wundergraph.config.ts
     │   ├── wundergraph.server.ts
     │   └── wundergraph.operations.ts
     ├── Dockerfile
     ├── .dockerignore
+    ├── tsconfig.json
     └── package.json
 ```
 
 ### Test
-Navigate to `app/` and run `docker build -t wundergraph .` to build your final image.
+
+```shell
+npm i && docker build -t wundergraph .
+```
+
 Run `docker run -p 9991:9991 wundergraph:latest` to test your image.
