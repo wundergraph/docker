@@ -29,4 +29,4 @@ This repository instructs you how to build a docker container for WunderGraph. I
 npm i && docker build -t wundergraph .
 ```
 
-Run `docker run -p 9991:9991 wundergraph:latest` to test your image
+Run `docker run -p 9991:9991 wundergraph:latest` to test your image.
