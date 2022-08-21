@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wundergraph/sdk": "^0.95.0"
+    "@wundergraph/sdk": "^0.98.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
