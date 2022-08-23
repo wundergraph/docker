@@ -20,8 +20,6 @@ const myApplication = new Application({
 	],
 });
 
-console.log(process.env.TOKEN);
-
 // configureWunderGraph emits the configuration
 configureWunderGraphApplication({
 	application: myApplication,
