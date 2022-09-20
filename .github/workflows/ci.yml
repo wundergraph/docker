@@ -15,6 +15,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install wunderctl
+        run: npm i -g @wundergraph/wunderctl
+
       - name: Create WunderGraph sample app
         run: mkdir testapp && cd testapp && wunderctl init -t nextjs-starter
 
