@@ -40,6 +40,6 @@ USER node
 
 WORKDIR .wundergraph
 
-CMD WG_NODE_HOST=0.0.0.0 wunderctl start --debug
+CMD WG_NODE_HOST=0.0.0.0 wunderctl start
 
 EXPOSE 9991
