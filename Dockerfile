@@ -15,7 +15,7 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # install wunderctl in correct version
-RUN curl -s -L https://github.com/wundergraph/wundergraph/releases/download/v0.109.1/wunderctl_0.109.1_Linux_x86_64.tar.gz | tar xzvf - && \
+RUN curl -s -L https://github.com/wundergraph/wundergraph/releases/download/v0.110.0/wunderctl_0.110.0_Linux_x86_64.tar.gz | tar xzvf - && \
     chmod +x wunderctl && mv wunderctl /usr/local/bin
 RUN wunderctl version
 
@@ -40,6 +40,6 @@ USER node
 
 WORKDIR .wundergraph
 
-CMD wunderctl start --listen-addr 0.0.0.0:9991 --debug
+CMD WG_NODE_HOST=0.0.0.0 wunderctl start --debug
 
 EXPOSE 9991
