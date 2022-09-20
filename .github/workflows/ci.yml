@@ -15,11 +15,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install wunderctl
-        run: |
-          curl -s -L https://github.com/wundergraph/wunderctl/releases/download/v0.74.7/wunderctl_0.74.7_Linux_x86_64.tar.gz | tar xzvf - && \
-          chmod +x wunderctl && mv wunderctl /usr/local/bin
-
       - name: Create WunderGraph sample app
         run: mkdir testapp && cd testapp && wunderctl init -t nextjs-starter
 
