@@ -21,7 +21,7 @@ ADD . .
 RUN npm exec wunderctl generate
 
 # Image layer for production
-from node:lts-alpine as runner
+FROM node:lts-alpine as runner
 WORKDIR /usr/src/app
 
 # copy entire project and dependencies
