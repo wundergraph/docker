@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "wunderctl up --debug",
+    "start": "wunderctl start --debug",
+    "dev": "wunderctl up --debug",
     "generate": "wunderctl generate --debug",
     "check": "tsc"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wundergraph/sdk": "^0.110.0"
+    "@wundergraph/sdk": "^0.114.3"
   },
   "devDependencies": {
     "@types/node": "^16.11.52",
