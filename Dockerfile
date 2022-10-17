@@ -11,11 +11,13 @@ WORKDIR /usr/src/app
 # rebuild image when package.json or lock has changed
 COPY package*.json ./
 
-# install dependencies
-RUN npm ci --only=production
-
 # add project artifacts to docker image
 ADD . .
+
+# clean and reinstall dependencies, otherwise we'll get
+# incorrect binaries if the container and host are not
+# same OS and arch
+RUN rm -fr node_modules && npm ci --omit=dev
 
 # generate your wundergraph application
 RUN npm exec wunderctl generate
