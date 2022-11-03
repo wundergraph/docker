@@ -17,7 +17,3 @@ jobs:
 
       - name: Build container
         run: docker build -t wundergraph .
-
-      - name: Delete app
-        continue-on-error: true
-        run: rm -rf testapp || true
