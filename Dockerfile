@@ -1,5 +1,5 @@
 # Image layer for building the application
-FROM node:lts as build
+FROM node:16-alpine as build
 
 # global npm dependencies: recommended to place those dependencies in the non-root user directory
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
@@ -21,7 +21,7 @@ ADD . .
 RUN npm exec wunderctl generate
 
 # Image layer for production
-FROM node:lts-alpine as runner
+FROM node:16-alpine as runner
 WORKDIR /usr/src/app
 
 # copy entire project and dependencies
