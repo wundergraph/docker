@@ -24,10 +24,6 @@ jobs:
       - name: Copy files
         run: cp Dockerfile ./testapp && cp .dockerignore ./testapp
 
-      - name: Install dependencies
-        working-directory: testapp
-        run: npm ci
-
       - name: Build container
         working-directory: testapp
         run: docker build -t wundergraph .
