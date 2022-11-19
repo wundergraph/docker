@@ -5,6 +5,7 @@
 
 # WunderGraph build output
 .wundergraph/generated
+.wundergraph/cache
 
 # dependencies
 node_modules

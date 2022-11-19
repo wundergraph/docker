@@ -1,5 +1,4 @@
 import {
-	Application,
 	configureWunderGraphApplication,
 	cors,
 	EnvironmentVariable,
@@ -14,16 +13,11 @@ const spaceX = introspect.graphql({
 	url: 'https://api.spacex.land/graphql/',
 });
 
-const myApplication = new Application({
-	name: 'app',
+// configureWunderGraph emits the configuration
+configureWunderGraphApplication({
 	apis: [
 		spaceX
 	],
-});
-
-// configureWunderGraph emits the configuration
-configureWunderGraphApplication({
-	application: myApplication,
 	server,
 	operations,
 	codeGenerators: [
