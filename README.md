@@ -28,8 +28,10 @@ This repository instructs you how to build a docker container for WunderGraph. I
 ```shell
 # Install your project to generate a lockfile
 npm i
-# Build the docker image
-docker build -t wundergraph .
+# Build the docker image. Set public url to generate a compatible client 
+docker build --build-arg commit_sha=dev \
+             --build-arg some_variable_name=https://your-public-url.com \
+             -t wundergraph .
 ```
 
 Run `docker run -p 9991:9991 wundergraph:latest` to test your image.
