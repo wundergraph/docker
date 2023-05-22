@@ -5,7 +5,7 @@ ARG wg_public_node_url
 WORKDIR /app
 
 COPY package.json package-lock.json /app/
-# We place the binary in /usr/bin/wunderctl so we can find it with a relative path
+# We place the binary in /usr/bin/wunderctl so we can find it without a relative path
 ENV CI=true WG_COPY_BIN_PATH=/usr/bin/wunderctl
 # Ensure you lock file is up to date otherwise the build will fail
 RUN npm ci --prefer-offline --no-audit
