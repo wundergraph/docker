@@ -21,4 +21,4 @@ RUN wunderctl generate --wundergraph-dir=.wundergraph
 ENV WG_NODE_HOST=0.0.0.0
 # Expose only the node, server is private
 EXPOSE 9991
-CMD wunderctl start --pretty-logging=false --wundergraph-dir=.wundergraph
+CMD wunderctl start --wundergraph-dir=.wundergraph
