@@ -5,7 +5,7 @@ ARG wg_public_node_url
 WORKDIR /app
 
 COPY package.json package-lock.json /app/
-# We place the binary in /usr/bin/wunderctl so that it start command
+# We place the binary in /usr/bin/wunderctl so we can find it with a relative path
 ENV CI=true WG_COPY_BIN_PATH=/usr/bin/wunderctl
 # Ensure you lock file is up to date otherwise the build will fail
 RUN npm ci --prefer-offline --no-audit
@@ -19,4 +19,6 @@ ENV WG_NODE_HOST=0.0.0.0 WG_PUBLIC_NODE_URL=${wg_public_node_url}
 RUN wunderctl generate --wundergraph-dir=.wundergraph
 # Listen to all interfaces, 127.0.0.1 might produce errors with ipv6 dual stack
 ENV WG_NODE_HOST=0.0.0.0
+# Expose only the node, server is private
+EXPOSE 9991
 CMD wunderctl start --pretty-logging=false --wundergraph-dir=.wundergraph
