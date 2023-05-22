@@ -11,10 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wundergraph/sdk": "^0.143.1"
+    "@wundergraph/sdk": "^0.158.1"
   },
   "devDependencies": {
-    "@types/node": "^16.11.52",
-    "typescript": "^4.7.4"
+    "@types/node": "^18.16.14",
+    "typescript": "^4.9.5"
   }
 }
